@@ -1,12 +1,16 @@
 
-import set.OperacoesBasic.ConjuntoPalavrasUnicas;
+import java.util.Scanner;
 
+import set.Ordenacao.CadastroProdutos;
 public class Main {
-
+	public static Scanner leia = new Scanner(System.in);
 	public static void main(String[] args) {
 		
 		/*
-		 * ListaTarefa listaTarefa = new ListaTarefa();
+		 *						 List
+		 
+		
+		ListaTarefa listaTarefa = new ListaTarefa();
 		System.out.println("O numero total de elementos é: " + listaTarefa.obterNumeroTotalTarefas());
 		
 		listaTarefa.adicionarTarefa("Tarefa 1");
@@ -60,19 +64,21 @@ public class Main {
 		ord.adicionarPessoa("Paulo", 21, 1.72);
 		
 		System.out.println(ord.ordenarPorAltura());
+		
 		--------------------------------------------------------
 		                    Set
 		
 		ConjuntoConvidados convidado = new ConjuntoConvidados();
 		convidado.adicionarConvidado("Gabriel", 1232);
 		convidado.adicionarConvidado("Victor", 1234);
-		System.out.println(convidado.contarConvidados());
+		convidado.adicionarConvidado("Victor", 1234);
 		convidado.exibirConvidados();
 		
-		convidado.removerConvidadoPorCodigo(1234);
-		System.out.println("Removido, agora há " + convidado.contarConvidados() + " convidados");
+		System.out.println("há " + convidado.contarConvidados() + " convidados");
 		convidado.exibirConvidados();
-		*/
+		
+		
+		----------------------------------
 		ConjuntoPalavrasUnicas p = new ConjuntoPalavrasUnicas();
 		
 		p.adicionarPalavra("Luffy");
@@ -80,10 +86,36 @@ public class Main {
 		p.adicionarPalavra("Nami");
 		p.adicionarPalavra("Usopp");
 		p.adicionarPalavra("Sanji");
+		----------------------------------------------------
 		
+		AgendaContatos ac = new AgendaContatos();
+		ac.adicionarContato("SecondTime", 013343554);
+		ac.adicionarContato("Lucas", 813343723);
+		ac.adicionarContato("Lucas Gabriel", 813256654);
+		ac.adicionarContato("Rodrigo", 911234554);
+		ac.adicionarContato("Enygma", 843345624);
+		ac.adicionarContato("Teste", 123456);
+		ac.adicionarContato("Teste 2", 123454);
 		
-		p.exibirPalavrasUnicas();
-		p.verificarPalavra("Brook");
+		ac.atualizarNumeroContato("Teste 2", 000000);
+	
+		
+		ac.exibirContato();
+		System.out.println("-----------------------");
+		System.out.println("Pesquisar nome: ");
+		String nomePesq = leia.nextLine();
+		System.out.println(ac.pesquisarPorNome(nomePesq));
+		*/
+		
+		CadastroProdutos c = new CadastroProdutos();
+		c.adicionarProduto(1233, "Produto 1", 45d, 5);
+		c.adicionarProduto(1223, "Produto 9", 12d, 10);
+		c.adicionarProduto(3212, "Produto", 5d, 2);
+		c.adicionarProduto(1452, "Produto 4", 10d, 1);
+		c.adicionarProduto(1232, "Produto 5", 20d, 3);
+		c.adicionarProduto(1230, "Produto 6", 34d, 1);
+		
+		System.out.println(c.exibirPorPreco());
 		
 	}
 
