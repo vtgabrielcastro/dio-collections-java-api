@@ -1,7 +1,8 @@
 
 import java.util.Scanner;
 
-import set.Ordenacao.CadastroProdutos;
+import map.OperacoesBasicas.*;
+
 public class Main {
 	public static Scanner leia = new Scanner(System.in);
 	public static void main(String[] args) {
@@ -105,7 +106,8 @@ public class Main {
 		System.out.println("Pesquisar nome: ");
 		String nomePesq = leia.nextLine();
 		System.out.println(ac.pesquisarPorNome(nomePesq));
-		*/
+		
+		-------------------------------------------------------
 		
 		CadastroProdutos c = new CadastroProdutos();
 		c.adicionarProduto(1233, "Produto 1", 45d, 5);
@@ -116,6 +118,19 @@ public class Main {
 		c.adicionarProduto(1230, "Produto 6", 34d, 1);
 		
 		System.out.println(c.exibirPorPreco());
+		*/
+		
+		AgendaContatos agenda = new AgendaContatos();
+		agenda.adicionarContato("Gabriel", 12345);
+		agenda.adicionarContato("Victor Gabriel", 54321);
+		agenda.adicionarContato("Gabriel", 12345);
+		agenda.adicionarContato("Gabriel", 12345);
+		agenda.adicionarContato("Gabriel", 99999);
+		
+		agenda.exibirContatos();
+		System.out.println(agenda.pesquisarPorNome("Victor Gabriel"));
+		agenda.removerContato("Gabriel");
+		agenda.exibirContatos();
 		
 	}
 
